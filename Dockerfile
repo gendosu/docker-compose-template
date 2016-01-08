@@ -17,7 +17,7 @@ RUN apt-get update \
 RUN mkdir -p /products
 WORKDIR /products
 
-ADD Gemfile /products/Gemfile
-ADD Gemfile.lock /products/Gemfile.lock
-
-RUN eval "$(rbenv init -)"; bundle
+# ADD Gemfile /products/Gemfile
+# ADD Gemfile.lock /products/Gemfile.lock
+# 
+# RUN eval "$(rbenv init -)"; bundle
