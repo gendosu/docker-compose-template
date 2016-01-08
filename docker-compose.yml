@@ -7,19 +7,8 @@ main:
   volumes:
    - .:/products
 
-  command: ruby run.rb
-
   ports:
     - "3000:3000"
-
-  volumes:
-    - ".:/products"
-
-  links:
-    - "mysql:mysql"
-    - "redis:redis"
-
-  command: rails s -b 0.0.0.0
 
 #
 # MySQLのコンテナ
