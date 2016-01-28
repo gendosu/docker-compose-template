@@ -9,10 +9,12 @@ MAINTAINER Gen Takahashi "gendosu@gmail.com"
 RUN apt-get update \
 &&  apt-get -y upgrade \
 &&  apt-get -y --force-yes install \
-  ttf-kochi-gothic \
-  imagemagick \
-  language-pack-ja \
-  fonts-migmix
+    ttf-kochi-gothic \
+    imagemagick \
+    language-pack-ja \
+    fonts-migmix \
+&& apt-get clean \
+&& rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 RUN mkdir -p /products
 WORKDIR /products
