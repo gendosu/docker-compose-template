@@ -4,6 +4,9 @@
 main:
   build: .
 
+  links:
+    - "mysql:mysql"
+    
   volumes:
    - .:/products
 

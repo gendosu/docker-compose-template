@@ -13,13 +13,15 @@ RUN apt-get update \
     imagemagick \
     language-pack-ja \
     fonts-migmix \
-&& apt-get clean \
-&& rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
+    sqlite3 \
+    libsqlite3-dev \
+&&  apt-get clean \
+&&  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 RUN mkdir -p /products
 WORKDIR /products
 
 # ADD Gemfile /products/Gemfile
 # ADD Gemfile.lock /products/Gemfile.lock
-# 
+#
 # RUN eval "$(rbenv init -)"; bundle
