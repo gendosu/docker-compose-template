@@ -9,7 +9,7 @@ MAINTAINER Gen Takahashi "gendosu@gmail.com"
 RUN apt-get update \
 &&  apt-get -y upgrade \
 &&  apt-get -y --force-yes install \
-    ttf-kochi-gothic \
+    fonts-hanazono \
     imagemagick \
     language-pack-ja \
     fonts-migmix \
