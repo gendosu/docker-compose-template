@@ -2,7 +2,7 @@
 #
 # VERSION               0.0.1
 
-FROM      gendosu/ubuntu-base:latest
+FROM      gendosu/ubuntu-ruby:2.2.3
 
 MAINTAINER Gen Takahashi "gendosu@gmail.com"
 
@@ -21,7 +21,7 @@ RUN apt-get update \
 RUN mkdir -p /products
 WORKDIR /products
 
-# ADD Gemfile /products/Gemfile
+ADD Gemfile /products/Gemfile
 # ADD Gemfile.lock /products/Gemfile.lock
-#
-# RUN eval "$(rbenv init -)"; bundle
+
+RUN eval "$(rbenv init -)"; bundle
