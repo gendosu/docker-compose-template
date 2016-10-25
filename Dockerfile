@@ -22,6 +22,7 @@ ADD . /products
 WORKDIR /products
 
 RUN chmod a+x /products/run.sh /products/entrypoint.sh
+RUN ./entrypoint.sh
 
 ENTRYPOINT ["./entrypoint.sh"]
 CMD ./run.sh
