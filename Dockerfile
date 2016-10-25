@@ -18,10 +18,11 @@ RUN apt-get update \
 &&  apt-get clean \
 &&  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
-RUN mkdir -p /products
+ADD . /products
 WORKDIR /products
 
-ADD Gemfile /products/Gemfile
-# ADD Gemfile.lock /products/Gemfile.lock
+RUN chmod a+x /products/run.sh /products/entrypoint.sh
 
-RUN eval "$(rbenv init -)"; bundle
+ENTRYPOINT ["./entrypoint.sh"]
+CMD ./run.sh
+
