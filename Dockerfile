@@ -2,7 +2,8 @@
 #
 # VERSION               0.0.1
 
-FROM      gendosu/ubuntu-ruby:2.2.3
+#FROM      gendosu/ubuntu-ruby:2.2.3
+FROM      ruby:2.2.3
 
 MAINTAINER Gen Takahashi "gendosu@gmail.com"
 
@@ -11,7 +12,6 @@ RUN apt-get update \
 &&  apt-get -y --force-yes install \
     fonts-hanazono \
     imagemagick \
-    language-pack-ja \
     fonts-migmix \
     sqlite3 \
     libsqlite3-dev \
