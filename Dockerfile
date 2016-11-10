@@ -21,9 +21,11 @@ RUN apt-get update \
 ADD . /products
 WORKDIR /products
 
-RUN chmod a+x /products/run.sh /products/entrypoint.sh
+RUN chmod a+x /products/entrypoint.sh
 RUN ./entrypoint.sh
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ./run.sh
+
+# CMD rails s -b 0.0.0.0 -p 3000
+CMD bash
 
