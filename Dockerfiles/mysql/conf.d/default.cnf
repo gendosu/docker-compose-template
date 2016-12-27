@@ -1,0 +1,17 @@
+[client]
+socket=/var/run/mysqld/mysqld.sock
+
+[mysql]
+max_allowed_packet=16M
+socket=/var/run/mysqld/mysqld.sock
+
+[mysqld]
+character-set-server = utf8
+max_allowed_packet=16M
+socket=/var/run/mysqld/mysqld.sock
+
+[mysqld_safe]
+character-set-server = utf8
+max_allowed_packet=16M
+socket=/var/run/mysqld/mysqld.sock
+
