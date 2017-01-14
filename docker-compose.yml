@@ -7,24 +7,20 @@ services:
   #
   main:
     build: .
-  
+
     links:
       - "mysql:mysql"
-      
+
     volumes:
      - .:/products
-  
+
     ports:
       - "3000:3000"
 
     environment:
       RAILS_ENV: development
       DATABASE_URL: mysql2://root:root@mysql/example_development
-      # better_errorsを使う場合に、dockerのgatewayのアドレスをここに入れる
-      TRUSTED_IP: 
 
-    command: CMD rails s -b 0.0.0.0 -p 3000
-  
   #
   # MySQLのコンテナ
   #
@@ -39,20 +35,19 @@ services:
   #
   mysql:
     image: mysql:5.5.54
-  
+
     environment:
       - MYSQL_ROOT_PASSWORD=root
-  
+
     volumes:
       - "./Dockerfiles/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
       - "./Dockerfiles/mysql/conf.d:/etc/mysql/conf.d"
 
     ports:
       - "3306:3306"
-  
+
   redis:
     image: redis:latest
-  
+
     ports:
       - "6380:6380"
-
