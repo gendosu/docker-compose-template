@@ -24,14 +24,11 @@ services:
   #
   # MySQLのコンテナ
   #
-  # コンテナへのアクセスは
-  # $> docker exec -i -t [コンテナID] /bin/bash
+  # コンテナへのshellアクセスは
+  # $> docker-compose exec mysql bash
   #
   # MySQLへのアクセスは
-  # $> mysql -uroot -p -hmysql
-  #
-  # macからは
-  # $> mysql -uroot -p -hlocal-vm(hostsにlocal-vmを設定した場合)
+  # $> docker-compose exec mysql mysql -uroot -p
   #
   mysql:
     image: mysql:5.5.54
