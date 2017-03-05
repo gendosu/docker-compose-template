@@ -21,6 +21,8 @@ services:
       RAILS_ENV: development
       DATABASE_URL: mysql2://root:root@mysql/example_development
 
+    command: rails s -b 0.0.0.0
+
   #
   # MySQLのコンテナ
   #
